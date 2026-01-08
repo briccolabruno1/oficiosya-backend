@@ -3,7 +3,7 @@ export class User {
     email: string
     passwordHash: string
 
-    role: 'USER' | 'PROFESSIONAL'
+    role: 'USER' | 'PROFESSIONAL' | null
 
     createdAt: Date;
     updatedAt: Date;
