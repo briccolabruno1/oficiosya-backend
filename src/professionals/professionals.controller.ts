@@ -48,4 +48,27 @@ export class ProfessionalsController {
       isActive: profile.isActive,
     };
   }
+
+  @Post('search')
+  search(@Body() body: any) {
+    const { service, location } = body;
+
+    if (!service || !location) {
+      return { error: 'service and location are required' };
+    }
+
+    // mock data
+    return [
+      {
+        id: 'pro-1',
+        fullName: 'Juan Pérez',
+        trade: service,
+        workZone: location,
+        rating: 4.8,
+        reviewsCount: 12,
+        whatsappNumber: '3411234567',
+        profileImageUrl: 'https://via.placeholder.com/150',
+      },
+    ];
+  }
 }
